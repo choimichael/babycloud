@@ -5,6 +5,8 @@ BabyCloud::Application.routes.draw do
   resources :users, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
 
+  get 'grid' => 'posts#grid'
+
   # post 'images/imageform' => 'images#create'
 
   # The priority is based upon order of creation: first created -> highest priority.

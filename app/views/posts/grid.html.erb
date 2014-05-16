@@ -1,0 +1,17 @@
+<h1>
+	Masonry grid
+</h1>
+
+<div id="container">
+	
+	<% @posts.each do |post| %>
+		<% post.images.each do |image| %>
+			<% if image.content_content_type %>
+				<%= image_tag image.content.url, width: '100px' %>
+			<% end %>
+		<% end %>		
+	<% end %>
+
+	<%= link_to 'posts', posts_path, class: 'btn btn-primary btn-lg' %>
+
+</div>

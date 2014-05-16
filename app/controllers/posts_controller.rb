@@ -6,22 +6,26 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def grid
+    @posts = Post.all
+  end
+
   def show
   end
 
   def new
     @post = Post.new
-    # @post.images.build
+    @post.images.build
   end
 
   def edit
-    # @post.images.build
+    @post.images.build
   end
   
   # POST /posts
   def create
     @post = Post.new(post_params)
-    # @post.images.build
+    @post.images.build
     # @post.user_id = current_user.id
       if @post.save
         redirect_to posts_path, notice: 'Post was successfully created'
@@ -32,7 +36,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1
   def update
-    if @post.save
+    if @post.update(post_params)
       redirect_to @post, notice: "Post was successfully updated"
     else
       render :edit
