@@ -1,0 +1,39 @@
+<div class="well well=md">
+
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+	<% if @post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@post.errors.count, "error") %> prohibited this article from being saved:</h2>
+			<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</div>
+	<!-- Upload Image -->
+	<div>
+		<%= f.fields_for :images do |ph| %>
+			<% unless ph.object.new_record? %>
+				<%= image_tag ph.object.content.url %>
+			<% end %>
+			<%= ph.file_field :content %>
+		<% end %>
+	</div>
+
+	<div class="field">
+		<%= f.label :description %><br>
+		<%= f.text_area :description, :size => '50 x 20' %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
+</div>
