@@ -7,6 +7,8 @@ class User
   has_many :images
   has_many :posts
 
+  validates :email, :name, uniqueness: :true, presence: :true
+
   def password
   	@password
   end

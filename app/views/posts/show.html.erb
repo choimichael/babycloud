@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <% @post.images.each do |image| %>
-<%= image_tag image.content.url %>
+<% if image.content_content_type %>
+<%= image_tag image.content.url, width: '500px'%>
+<% end %>
 <% end %>
 
 <p>

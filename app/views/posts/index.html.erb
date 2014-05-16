@@ -18,10 +18,13 @@
 				<td><%= post.description %></td>
 				<td><%  post.images.each do |image| %></td>
 				<td><%= link_to (posts_path(image)) do %></td>
-				<td><%= image_tag image.content.url %></td>
+				<td><% if image.content_content_type %></td>
+				<td><%= image_tag image.content.url, width: '200px' %></td>
+				<td><% end %></td>
 				<td><% end %></td>
 				<td><% end %></td>
 				<td><%= post.created_at.strftime("%B %d, %Y") %></td>
+				<td><%= link_to 'Grid', grid_path %></td> 
 				<td><%= link_to 'Show', post %></td> 
 				<td><%= link_to 'Edit', edit_post_path(post) %></td>
 				<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

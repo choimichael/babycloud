@@ -1,13 +1,15 @@
+
+
+<div id="container" class="js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+
 <h1>
 	Masonry grid
 </h1>
-
-<div id="container">
 	
 	<% @posts.each do |post| %>
 		<% post.images.each do |image| %>
 			<% if image.content_content_type %>
-				<%= image_tag image.content.url, width: '100px' %>
+				<%= image_tag image.content.url, width: '200px' %>
 			<% end %>
 		<% end %>		
 	<% end %>
