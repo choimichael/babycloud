@@ -9,9 +9,14 @@ gem 'genghis', '~> 1.4.1'
 gem 'mongoid-paperclip', '~> 0.0.8', :require => 'mongoid_paperclip'
 gem 'aws-sdk'
 
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'font-awesome-sass'
+
+# thoughtbot/high voltage
+gem 'high_voltage'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

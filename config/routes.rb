@@ -6,6 +6,7 @@ BabyCloud::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
 
   get 'grid' => 'posts#grid'
+  get 'home' => 'sessions#home'
 
   # post 'images/imageform' => 'images#create'
 
