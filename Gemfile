@@ -7,12 +7,11 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'genghis', '~> 1.4.1'
 
 gem 'mongoid-paperclip', '~> 0.0.8', :require => 'mongoid_paperclip'
-gem 'aws-s3', :require => 'aws/s3'
-
+gem 'aws-sdk'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.1.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

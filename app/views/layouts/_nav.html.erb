@@ -8,16 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Baby Cloud</a>
+      <a class="navbar-brand" href="<%= posts_path %>">Baby Cloud</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
           <% if !current_user %>
+          
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", new_sessions_path %></li>
             <% else %>
+          <li><%= link_to 'Home', posts_path %></li>
+          <li><%= link_to "Grid", grid_path %></li>
           <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
         <% end %>
       </ul>

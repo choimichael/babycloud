@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   	@user = User.where(:email => params[:session][:email]).first
   
     if @user == nil || !@user.authenticate(params[:session][:password])
-  		flash[:danger] = "Invalid email/password combination"
+  		flash[:error] = "Invalid email/password combination"
   		render 'new'
   	else
   		flash[:success] = "You have logged in successfully"

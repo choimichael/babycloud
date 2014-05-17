@@ -1,19 +1,23 @@
 
-
-<div id="container" class="js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
-
-<h1>
-	Masonry grid
-</h1>
-	
-	<% @posts.each do |post| %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      
+      <% @posts.each do |post| %>
 		<% post.images.each do |image| %>
 			<% if image.content_content_type %>
-				<%= image_tag image.content.url, width: '200px' %>
+				<%= image_tag image.content.url %>
 			<% end %>
 		<% end %>		
 	<% end %>
 
 	<%= link_to 'posts', posts_path, class: 'btn btn-primary btn-lg' %>
+    </a>
+  </div>
+<!-- <h1>
+	Masonry grid
+</h1> -->
+	
+	
 
 </div>
