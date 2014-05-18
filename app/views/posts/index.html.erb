@@ -11,6 +11,7 @@
 								<%= image_tag image.content.url, class: "img-thumbnail" %>
 								<%= link_to 'Show', post, class: "btn btn-success"%>
 								<%= link_to 'Edit', edit_post_path(post), class: "btn btn-success"%>
+								<%= link_to 'Delete', posts_path, {method: :delete, data: {confirm: "Are you sure you want to take-backsies on that prop?"}, class: "btn btn-danger"} %>
 								<% end %>
 							<% end %>
 						<% end %>
