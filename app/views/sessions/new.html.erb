@@ -1,10 +1,17 @@
-<h1>Sign In</h1>
+<div class="row">
+	<div class="col-md-4"></div>
+		<div class="col-md-4">
 
-<%= form_for :session, :url => sessions_path do |f| %>
-	Email: <%= f.text_field :email %>
-	Password: <%= f.password_field :password %>
-	<%= f.submit "Sign In", class: "btn" %>
-	<%= link_to "Sign up", new_user_path, class: "btn btn-primary" %>
-<% end %>
+			<%= render partial: 'sessions/nav' %>
+			
+			<h1>Sign In</h1>
 
+				<%= form_for :session, :url => sessions_path do |f| %>
+					Email: <%= f.text_field :email, class: "form-control" %>
+					Password: <%= f.password_field :password, class: "form-control" %>
+					<%= f.submit "Sign In", class: "btn btn-success" %>
+				<% end %>
 
+		</div>
+	<div class="col-md-4"></div>
+</div>
