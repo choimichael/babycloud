@@ -16,7 +16,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'font-awesome-sass'
 
 # thoughtbot/high voltage
-gem 'high_voltage'
+# gem 'high_voltage'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
