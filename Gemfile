@@ -9,6 +9,7 @@ gem 'genghis', '~> 1.4.1'
 gem 'mongoid-paperclip', '~> 0.0.8', :require => 'mongoid_paperclip'
 gem 'aws-sdk'
 
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
