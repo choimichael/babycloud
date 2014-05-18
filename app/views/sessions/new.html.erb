@@ -3,7 +3,7 @@
 		<div class="col-md-4">
 
 			<%= render partial: 'sessions/nav' %>
-			
+			<div class="well well-md">
 			<h1>Sign In</h1>
 
 				<%= form_for :session, :url => sessions_path do |f| %>
@@ -11,7 +11,7 @@
 					Password: <%= f.password_field :password, class: "form-control" %>
 					<%= f.submit "Sign In", class: "btn btn-success" %>
 				<% end %>
-
+			</div>
 		</div>
 	<div class="col-md-4"></div>
 </div>

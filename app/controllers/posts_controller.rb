@@ -20,7 +20,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post.images.build
   end
   
   # POST /posts

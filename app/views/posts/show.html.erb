@@ -1,20 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="col-md-4"></div>
+		
+			<div class="col-md-4">
+				<% @post.images.each do |image| %>
+						<% if image.content_content_type %>
+							<%= image_tag image.content.url %>
+						<% end %>
+					<% end %>
+				
+				<%= form_for @post, :html => { :multipart => true } do |f| %>
+					
+					<h3>Title</h3>
+					<%= @post.title %>
+							
+					<h3>Description</h3>
+					<%= @post.description %>
+				
+				<% end %>
+			
+			</div>
+	
+	</div>
 
-<% @post.images.each do |image| %>
-<% if image.content_content_type %>
-<%= image_tag image.content.url, width: '500px'%>
-<% end %>
-<% end %>
+</div>
 
-<p>
-	<strong>Title:</strong>
-	<%= @post.title %>
-</p>
-
-<p>
-	<strong>Description:</strong>
-	<%= @post.description %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

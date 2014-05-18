@@ -1,6 +1,33 @@
-<h1>Edit Photo</h1>
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-6">
+			<% @post.images.each do |image| %>
+					<% if image.content_content_type %>
+						<%= image_tag image.content.url, class: "img-thumbnail"%>
+					<% end %>
+				<% end %>
+		</div>
 
-<%= render 'form' %>
+		<div class="col-md-6">
+			
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+			
+				<%= form_for @post, :html => { :multipart => true } do |f| %>
+				
+						<h2>Title</h2>
+						<%= f.text_field :title, class: "form-control" %>
+						
+						<h2>Description</h2>
+						<%= f.text_area :description, size: "30x10", class: "form-control" %>
+						
+						<%= f.submit "Update", class: "btn btn-success" %>
+					
+				<% end %>
+			
+			
+
+		</div>
+		
+	</div>
+</div>

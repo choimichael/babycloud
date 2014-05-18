@@ -1,36 +1,21 @@
-<h1>Baby Photos</h1>
-
-<table class="table">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Picture</th>
-			<th>Date</th>
-		</tr>
-	</thead>
-	
-
-	<tbody>
-		<% @posts.each do |post| %>
-			<tr>
-				<td><%= post.title %></td>
-				<td><%= post.description %></td>
-				<td><%  post.images.each do |image| %></td>
-				<td><%= link_to (posts_path(image)) do %></td>
-				<td><% if image.content_content_type %></td>
-				<td><%= image_tag image.content.url, width: '200px' %></td>
-				<td><% end %></td>
-				<td><% end %></td>
-				<td><% end %></td>
-				<td><%= post.created_at.strftime("%B %d, %Y") %></td>
-				<td><%= link_to 'Grid', grid_path %></td> 
-				<td><%= link_to 'Show', post %></td> 
-				<td><%= link_to 'Edit', edit_post_path(post) %></td>
-				<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
-
-<br>
+<div class="container">
+	<div class="row">
+	  <div class="col-sm-6 col-md-6">
+	 
+				
+				<% @posts.each do |post| %>
+					<div class="col-sm-6 col-md-6">
+						<%  post.images.each do |image| %>
+							<%= link_to (posts_path(image)) do %>
+								<% if image.content_content_type %>
+								<%= image_tag image.content.url, class: "img-thumbnail" %>
+								<%= link_to 'Show', post, class: "btn btn-success"%>
+								<%= link_to 'Edit', edit_post_path(post), class: "btn btn-success"%>
+								<% end %>
+							<% end %>
+						<% end %>
+					</div>
+				<% end %>
+		</div>
+	</div>
+</div>
