@@ -19,6 +19,7 @@
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", new_sessions_path %></li>
           <% else %>
+          <li><%= link_to "Babies", posts_path %></li>
           <li><%= link_to "Upload", new_post_path %></li>
           <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
         <% end %>
