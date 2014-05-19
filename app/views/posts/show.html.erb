@@ -3,7 +3,7 @@
 	<div class="row text-center">
 		<% @post.images.each do |image| %>
 			<% if image.content_content_type %>
-				<%= image_tag image.content.url %>
+				<%= image_tag image.content.url, class: "img-responsive" %>
 	</div>
 
 <!-- 	<div class="col-md-"></div> -->
