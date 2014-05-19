@@ -1,24 +1,21 @@
 <div class="container">
 	<div class="row">
-	  <div class="col-sm-6 col-md-6">
-	 
-				
+
 				<% @posts.each do |post| %>
-					<div class="col-sm-6 col-md-6">
-						<%  post.images.each do |image| %>
-							<%= link_to (posts_path(image)) do %>
+						<% post.images.each do |image| %>
+							<%= link_to (post) do %>
 								<% if image.content_content_type %>
-								<%= image_tag image.content.url, class: "img-thumbnail" %>
-								<%= link_to 'Show', post, class: "btn btn-success"%>
-								<%= link_to 'Edit', edit_post_path(post), class: "btn btn-success"%>
-								<%= link_to 'Delete', post, {method: :delete, data: {confirm: "Are you sure you want to take-backsies on that prop?"}, class: "btn btn-danger"} %>
+								
+									<div class="col-sm-2">
+									
+										<%= image_tag image.content.url, class: "img-thumbnail" %>
+									
+									</div>
+								
 								<% end %>
 							<% end %>
 						<% end %>
-					</div>
 				<% end %>
-		
-
-		</div>
+			
 	</div>
 </div>
