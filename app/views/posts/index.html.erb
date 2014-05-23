@@ -2,19 +2,18 @@
 	<div class="row">
 
 				<% @posts.each do |post| %>
-						<% post.images.each do |image| %>
+						
 							<%= link_to (post) do %>
-								<% if image.content_content_type %>
+								<% if post.image_content_type %>
 								
 									<div class="col-sm-2">
 									
-										<%= image_tag image.content.url, class: "thumbnail img-thumbnail" %>
+										<%= image_tag post.image.url, class: "thumbnail img-thumbnail" %>
 									
 									</div>
 								
 								<% end %>
 							<% end %>
-						<% end %>
 				<% end %>
 			
 	</div>

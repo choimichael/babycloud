@@ -16,7 +16,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.images.build
   end
 
   def edit
@@ -24,8 +23,7 @@ class PostsController < ApplicationController
   
   # POST /posts
   def create
-    @post = Post.new(post_params)
-    @post.images.build
+     @post = current_user.posts.new(post_params)
     # @post.user_id = current_user.id
       if @post.save
         redirect_to posts_path, notice: 'Post was successfully created'
@@ -57,6 +55,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, images_attributes: [:content])
+      params.require(:post).permit(:title, :description, :image)
     end
 end

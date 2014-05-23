@@ -2,11 +2,10 @@
 	<div class="row">
 		
 		<div class="col-md-6">
-			<% @post.images.each do |image| %>
-					<% if image.content_content_type %>
-						<%= image_tag image.content.url, class: "img-thumbnail"%>
+					<% if @post.image_content_type %>
+						<%= image_tag @post.image.url, class: "img-thumbnail"%>
 					<% end %>
-				<% end %>
+				
 		</div>
 
 		<div class="col-md-6">

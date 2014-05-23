@@ -1,8 +1,6 @@
 BabyCloud::Application.routes.draw do
-  resources :posts do
-    resources :images, only: [:new, :create]
-  end
-  resources :users, only: [:new, :create]
+  resources :posts 
+  resources :users
   resource :sessions, only: [:new, :create, :destroy]
 
   get 'home' => 'sessions#home'
