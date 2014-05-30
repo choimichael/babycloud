@@ -6,12 +6,26 @@
 							<%= link_to (post) do %>
 								<% if post.image_content_type %>
 								
-									<div class="col-sm-2">
-									
-										<%= image_tag post.image.url, class: "thumbnail img-thumbnail" %>
-									
-									</div>
-								
+							<div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag post.image.url %>
+                    
+                    <div class="caption">
+
+                    	<%= form_for post, :html => { :multipart => true } do |f| %>
+                        
+                        <h4>From</h4>
+													<h5><%= post.title %></h5>
+							
+												<h4>Dear Baby Oliver</h4>
+													<h5><%= post.description %></h5>
+                      
+                      <% end %>
+
+                    </div>
+                </div>
+            </div>
+
 								<% end %>
 							<% end %>
 				<% end %>

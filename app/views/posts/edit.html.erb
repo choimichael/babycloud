@@ -14,10 +14,10 @@
 			
 				<%= form_for @post, :html => { :multipart => true } do |f| %>
 				
-						<h2>Title</h2>
+						<h2>From</h2>
 						<%= f.text_field :title, class: "form-control" %>
 						
-						<h2>Description</h2>
+						<h2>Dear Baby Oliver</h2>
 						<%= f.text_area :description, size: "30x10", class: "form-control" %>
 						
 						<%= f.submit "Update", class: "btn btn-success" %>
